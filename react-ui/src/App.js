@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
+
+  componentDidMount() {
+    const test = axios.get("api/")
+    console.log(test)
+  }
   render() {
     return (
       <div className="App">
