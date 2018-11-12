@@ -1,8 +1,11 @@
-// const db = require("../models")
-
+const db = require("../models")
+console.log(db)
 module.exports = {
     findAll(req, res) {
-        console.log('findall runs')
-        res.json({body:"Hello from the custom server!"});
+        db.Users.findAll({})
+            .then(data => {
+                res.json(data)
+            })
+
     }
 }
