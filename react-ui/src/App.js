@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-import axios from 'axios';
-
+import API from './utils/API.js'
 class App extends Component {
 
   componentDidMount() {
-    const test = axios.get("api/")
-    console.log(test)
+    this.goFetch()
+    // API.test().then(res => {
+    //   console.log(res)
+    // })
+  }
+
+  // tests grabbing data from server, found in apiRoutes.js
+  goFetch = () => {
+    API.test()
+      .then(res => 
+        console.log(res))
+      .catch(err => console.log(err))
   }
   render() {
     return (
